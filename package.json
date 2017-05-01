@@ -1,0 +1,18 @@
+{
+  "name": "sergey",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "connect-diskdb": "0.0.1",
+    "express-session": "^1.15.2",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  }
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/slideShowjs.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/detailNewss.js"></script>
+    <script src="js/requesthttp.js"></script>
+    <script src="js/menuBar.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/addNew.js"></script>
+    <script src="js/FilterSelectPagination.js"></script>
+    <script src="js/deleteNews.js"></script>
+    <script src="js/editNew.js"></script>
+    <script src="js/renderArticle.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/slideShow.css">
+    <link rel="stylesheet" href="css/styles2.css">
+</head>
+<body>
+
+<div class="wraper">
+    <div id="content">
+        <header>
+            <a class="logo" name="Логотип">
+                <img src="image/logo.jpg" alt="Логотип" onclick="returnMainPage()">
+            </a>
+            <a onclick="singIn()" class="signin">
+                войти
+            </a>
+            <a onclick="signOut()" class="sign-out">
+            выйти
+            </a>
+        </header>
+        <div id="navigation">
+            <ul>
+                <li><a onclick="sortCulture()">Культура</a></li>
+                <li><a onclick="sortPolitics()">Политика</a></li>
+                <li><a onclick="sortFinance()">Финансы</a></li>
+                <li><a onclick="sortSport()">Спорт</a></li>
+            </ul>
+        </div>
+        <div class="slide-show">
+            <div class="slideshow-container" data-id="id">
+                <div class="mySlides">
+                    <img src="" class="imgSlide" style="width:100%;height: 400px">
+                    <a onclick="detailNews(this.parentNode.parentNode)">
+                        <div class="text"></div>
+                    </a>
+                </div>
+
+                <div class="mySlides">
+                    <img src="" class="imgSlide" style="width:100%;height: 400px">
+                    <a onclick="detailNews(this.parentNode.parentNode)">
+                        <div class="text"></div>
+                    </a>
+                </div>
+
+                <div class="mySlides">
+                    <img src="" class="imgSlide" style="width:100%;height: 400px">
+                    <a onclick="detailNews(this.parentNode.parentNode)">
+                        <div class="text"></div>
+                    </a>
+                </div>
+
+                <a class="prev" onclick="slideShow.plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="slideShow.plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="slideShow.currentSliced(1)"></span>
+                <span class="dot" onclick="slideShow.currentSliced(2)"></span>
+                <span class="dot" onclick="slideShow.currentSliced(3)"></span>
+            </div>
+        </div>
+
+        <div class="popylar-add">
+            <div style="clear: both"><br></div>
+            <div class="add-news"><a onclick="addNew()">
+                Добавить новость
+            </a></div>
+
+            <div class="popylar">Популярное</div>
+            <div class="combo-box">
+                <select title="name" id="nameAutor">
+                </select>
+            </div>
+
+            <div class="combo-box">
+                <input type="date" id="date-input">
+            </div>
+            <div class="combo-box">
+                <select id="tags-select">
+                    <option>Теги</option>
+                    <option>Культура</option>
+                    <option>Политика</option>
+                    <option>Финансы</option>
+                    <option>Спорт</option>
+                </select>
+            </div>
+            <div class="find">
+                <button onclick="find()">Найти</button>
+            </div>
+        </div>
+
+        <div class="news">
+
+        </div>
+        <div class="clear"><br></div>
+
+
+        <div class="show-more">
+            <button onclick="showMore()">Показать ещё</button>
+        </div>
+        <div class="clear"><br></div>
+        <form name="test" method="post" action="input1.php">
+            <br>
+
+            <p><b>Логин:</b><br><br>
+                <input type="text" id="login" size="40">
+            </p>
+            <p><b>Пороль:</b><br><br>
+                <input type="password" id="password" size="40">
+            </p>
+
+            <br>
+            <p><input type="button" value="Войти" onclick="checkUser()">
+            </p>
+        </form>
+        <div class="detailNew" data-id="id">
+            <p class="article-detail-title">
+            </p>
+
+            <img class="article-detail-img" width="100%" height="400px" alt="картинка"></a>
+
+            <p class="article-detail-content">
+
+            </p>
+            <p class="detail-tags">
+
+            </p>
+            <div class="article-list-item-meta">
+                <h6><span>Автор: <span class="article-detail-author"> </span>
+
+                </span>
+                    <br>
+                    <span>Опубликована: <span class="article-detail-date"></span></span></h6>
+            </div>
+            <a onclick="deleteNews(this.parentNode)" class="delete-detail-new">
+                <img src="image/udalmt.png" width="30px" height="30px">
+            </a>
+            <a onclick="editNew(this.parentNode)" class="edit-detail-new">
+                <img src="image/111132-glowing-green-neon-icon-business-gear1.png" width="30px" height="30px">
+            </a>
+
+        </div>
+        <div class="edit-add-new" data-id="id">
+            <h2>Введите заголовок</h2>
+            <textarea id="title-text"></textarea>
+            <h2>Введите краткое описание </h2>
+            <textarea maxlength="200" id="summury-text"></textarea>
+            <h2>Введите содержание </h2>
+            <textarea id="content-text"></textarea>
+            <h2>Введите тэги </h2>
+            <textarea id="tags-text"></textarea>
+            <p><input type="file" name="photo" multiple accept="image/*,image/jpeg" id="img-add">
+                <input type="button" value="Добавить" onclick="saveAdd()" class="add-button">
+                <input type="button" value="Сохранить" onclick="saveEdit(this.parentNode.parentNode)"
+                       class="save-button">
+            </p>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>BestNews.by</p>
+        <p>created by Sergey Mikiyanec</p>
+        <p>8group 2course </p>
+        <p>sergey_mikiyanec@mail.ru last changes 2017 c</p>
+    </footer>
+</div>
+
+
+<template id="template-article-list-item">
+
+    <div class="article-list-item" data-id="id">
+        <br>
+        <a class="leftimg" onclick="detailNews(this.parentNode);">
+            <img src="" class="article-list-item-img" width="300px" height="200px" alt="картинка"></a>
+        <a onclick="detailNews(this.parentNode)"><h2 class="article-list-item-title">
+            Заголовок статьи
+
+        </h2></a>
+
+        <p class="article-list-item-summary">
+            Краткое описание для статьи. Тут краткое описание
+        </p>
+        <p class="tags-array">
+            тэги
+        </p>
+        <div class="article-list-item-meta">
+
+            <h6><span>Автор: <span class="article-list-item-author">Cергей Микиянец</span>
+
+            </span>
+                <span>Опубликована: <span class="article-list-item-date">11.10.2015 04:35</span></span></h6>
+            <br>
+
+        </div>
+        <a onclick="deleteNews(this.parentNode)" class="delete-new">
+            <img src="image/udalmt.png" width="30px" height="30px">
+        </a>
+        <div class="clear"><br></div>
+
+        <hr>
+
+
+    </div>
+</template>
+</body>
+</html>

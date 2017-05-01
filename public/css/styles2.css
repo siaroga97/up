@@ -1,0 +1,104 @@
+form{
+    display: none;
+    text-align: center;
+    margin-top: 5%;
+}
+.show-more{
+    text-align: center;
+
+}
+.show-more button{
+
+    width: 10%;
+    height: 5vh;
+    border-radius: 5px;
+}
+.show-more button:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.detailNew{
+    display: none;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+}
+.article-detail-title{
+    font-size: 25px;
+    font-weight: bold;
+}
+.article-detail-img{
+    margin-top: 2%;
+}
+.article-detail-content{
+    margin-top: 1%;
+}
+.delete-new{
+    float: right;
+    display:none;
+    margin-bottom: 5px;
+}
+.delete-new img:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+.delete-detail-new{
+    float: right;
+    display:none;
+    margin-bottom: 5px;
+}
+.delete-detail-new img:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+.edit-detail-new{
+    float: right;
+    display:none;
+    margin-bottom: 5px;
+}
+.edit-detail-new img:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+.edit-add-new{
+    text-align: center;
+}
+.edit-add-new textarea{
+    resize: none;
+    height: 10vh;
+    width: 60%;
+}
+#content-text{
+    height: 50vh;
+}
+.edit-add-new{
+    display: none;
+}
+
+.save-button {
+    float: right;
+    margin-right: 50vh;
+
+}
+.add-button{
+    float: right;
+    margin-right: 50vh;
+    display: block;
+}
+
+.tags-array{
+    margin-top: 1vh;
+    font-size: 14px;
+}
+
+.slide-show{
+    margin-top: 2vh;
+}
+
+.detail-tags{
+    margin-top: 1vh;
+    font-size: 14px;
+}
+
+
+

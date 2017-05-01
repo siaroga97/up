@@ -1,0 +1,384 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.logo img {
+    margin-left: 5%;
+    height: 15%;
+    width: 15%;
+}
+
+.logo img:hover{
+    cursor: pointer;
+}
+
+body {
+height: 100vh;
+}
+
+header {
+    height: 5%;
+    width: 100%;
+    background: black;
+
+}
+
+footer {
+    width: 100%;
+    height: 10%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.signin {
+    text-decoration: none;
+    color: white;
+    float: right;
+    margin-top: 2%;
+    margin-right: 10%;
+}
+
+.signin:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.sign-out {
+    text-decoration: none;
+    color: white;
+    float: right;
+    margin-top: 5%;
+    margin-right: -5%;
+    display: none;
+}
+
+.sign-out:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a{
+    font-family: "Century Gothic";
+    text-decoration: none;
+}
+
+p{
+    font-family: "Century Gothic";
+}
+span{
+    font-family: "Century Gothic";
+}
+ul {
+    text-decoration: none;
+    margin-left: 5%;
+}
+
+#navigation {
+    margin-top: 1vh;
+    width: 100%;
+    display: inline;
+    display: flex;
+    flex-direction: column;
+}
+
+#navigation ul li {
+    float: left;
+    list-style: none;
+}
+
+#navigation ul li a {
+    color: black;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+#navigation ul li a:hover {
+    background-color: #c5cdff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+main {
+    width: 100%;
+    display: inline;
+}
+
+.rightblock {
+    margin-top: 1%;
+    float: left;
+    width: 55%;
+}
+
+#list-news {
+    width: 90%;
+    list-style: disc;
+    text-decoration: none;
+    font-size: larger;
+}
+
+#list-news li a {
+    color: black;
+    text-decoration: none;
+}
+
+#list-news li a:hover {
+    type: "circle";
+    text-decoration: underline;
+    background-color: #c5cdff;
+}
+
+.all-news {
+    margin-right: 10%;
+    float: right;
+    font-size: 23px;
+}
+
+.all-news a {
+    color: black;
+}
+
+.all-news a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.popylar-add {
+    margin-top: 2%;
+    margin-left: 6%;
+    width: 85%;
+    height: 50px;
+    background-color: black;
+}
+
+.add-news {
+    visibility: hidden;
+    float: right;
+    margin-right: 1%;
+}
+
+.add-news a {
+    text-decoration: none;
+    color: white;
+}
+
+.add-news a:hover {
+    text-decoration: underline;
+}
+
+.clear {
+    clear: both;
+}
+
+.clear:after {
+    content: "&nbsp;";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+}
+
+.popylar {
+    float: left;
+
+    font-size: larger;
+    margin-left: 1%;
+    color: white;
+}
+
+.author-time {
+    font-family: "Arial";
+}
+
+#content {
+    background-image: url("../image/metal4.jpg");
+    display: inline;
+    flex: 1 0 auto;
+}
+
+.wraper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.popylar-news {
+    width: 100%;
+    height: 100%;
+}
+
+.main-news {
+    background-image: url("../image/leps_v_tance.jpg");
+    background-size: cover;
+    height: 300px;
+    width: 35%;
+    float: left;
+    margin-top: 1%;
+    margin-left: 6%;
+    text-align: left;
+}
+
+h1 {
+    margin-top: 200px;
+}
+
+.main-news a {
+    display: block;
+    height: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fdfffd;
+    float: inherit;
+}
+
+.main-news a:hover {
+    display: block;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 30px;
+    color: white;
+}
+
+.news {
+    width: 80%;
+    margin-left: 6%;
+}
+
+.news a {
+    color: black;
+    text-decoration: none;
+}
+
+.news a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.leftimg  {
+    float: left;
+    margin: 7px 7px 7px 0;
+}
+.leftimg:hover{
+    cursor: pointer;
+    opacity: 0.7;
+    size: 100px;
+}
+
+hr {
+    border: none;
+    background-color: rgba(32, 25, 255, 0.53);
+    color: rgba(32, 25, 255, 0.53);
+    height: 2px;
+
+}
+
+h6 {
+
+    margin-top: 1%;
+    font-family: Arial;
+}
+
+#pagination {
+    width: 70%;
+    display: inline;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30%;
+}
+
+#pagination ul li {
+    float: left;
+    list-style: none;
+}
+
+#pagination ul li a {
+    color: black;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+#pagination ul li a:hover {
+    background-color: #c5cdff;
+    text-decoration: underline;
+}
+
+.combo-box {
+    float: left;
+    margin-bottom: 1%;
+    margin-left: 1%;
+}
+
+.find {
+    float: left;
+    margin-left: 1%;
+}
+
+.article-list-item-summary {
+    font-size: 20px;
+    margin-top: 1%;
+}
+
+.article-list-item-title {
+    font-size: 25px;
+    font-family: Arial;
+}
+
+.article-list-item-title:hover{
+    cursor: pointer;
+}
+.article-list-item-meta{
+
+    font-size: 15px;
+}
+
