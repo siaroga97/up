@@ -1,7 +1,7 @@
-let slideShow = (function () {
+const slideShow = (function () {
     let slideIndex = 1;
-    let slideId=[{}
-    ];
+    let slideId = [];
+
     function plusSlides(n) {
         showSlides(slideIndex += n);
     }
@@ -11,43 +11,46 @@ let slideShow = (function () {
     }
 
     function fillSlideShow() {
-        let divText = document.getElementsByClassName('text');
-        let divSlid = document.getElementsByClassName('imgSlide');
-        let array = articleModel.getArticles(0, articleModel.getSize());
-        for (let i = 0; i < 3; i++) {
-            divSlid[i].src = array[i].img;
-            divText[i].textContent = array[i].title;
-            slideId.push(array[i].id);
-        }
-
+        const divText = document.getElementsByClassName('text');
+        const divSlid = document.getElementsByClassName('imgSlide');
+        requestServer.getArticles(0, 3).then((array) => {
+            for (let i = 0; i < 3; i += 1) {
+                divSlid[i].src = array[i].img;
+                divText[i].textContent = array[i].title;
+                slideId.push(array[i]._id);
+            }
+            document.querySelector('.slideshow-container').dataset.id = slideId[slideIndex - 1];
+        });
     }
 
     function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName('mySlides');
-        let dots = document.getElementsByClassName('dot');
-        let text = document.getElementsByClassName('text');
+        let i = 0;
+        const slides = document.getElementsByClassName('mySlides');
+        const dots = document.getElementsByClassName('dot');
         if (n > slides.length) {
-            slideIndex = 1
+            slideIndex = 1;
         }
         if (n < 1) {
-            slideIndex = slides.length
+            slideIndex = slides.length;
         }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+        document.querySelector('.slideshow-container').dataset.id = slideId[slideIndex - 1];
+
+        for (i = 0; i < slides.length; i += 1) {
+            slides[i].style.display = 'none';
         }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
+        for (i = 0; i < dots.length; i += 1) {
+            dots[i].className = dots[i].className.replace('active', '');
         }
-        document.querySelector('.slideshow-container').dataset.id=slideId[slideIndex];
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
+        console.log(slideId);
+
+        slides[slideIndex - 1].style.display = 'block';
+        dots[slideIndex - 1].className += ' active';
     }
 
-   return {
-       plusSlides:plusSlides,
-       currentSliced:currentSlide,
-       showSlides: showSlides,
-       fillSlideShow: fillSlideShow
-   };
-}())
+    return {
+        plusSlides,
+        currentSlide,
+        showSlides,
+        fillSlideShow,
+    };
+}());
