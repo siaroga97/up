@@ -1,0 +1,13 @@
+$ git log
+commit bc357e13d3f1dba0b5917382c8ba9f653672286e
+Author: Sergey <sergey_mikiyanec@mail.ru>
+Date:   Wed Feb 8 21:30:45 2017 +0300
+
+    add status
+
+commit c63e53ee048523856f348b007b865d69c1ce0f2f
+Author: Sergey <sergey_mikiyanec@mail.ru>
+Date:   Wed Feb 8 21:25:28 2017 +0300
+
+    add .gitignore
+
