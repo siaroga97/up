@@ -26,8 +26,7 @@ function showCheckUser() {
             document.querySelector('.show-more').style.display = 'block';
             document.querySelector('.popylar-add').style.display = 'block';
             document.querySelector('.signin').style.display = 'block';
-        }
-    );
+        });
 }
 
 function checkUser() {
@@ -41,8 +40,7 @@ function checkUser() {
         },
         notReady => {
             alert('Неправильный логин или пароль');
-        }
-    );
+        });
 }
 function signOut() {
     requestServer.logOut().then(
@@ -52,6 +50,5 @@ function signOut() {
             document.querySelector('.add-news').style.display = 'none';
             check = false;
             singIn();
-        }
-    );
+        });
 }

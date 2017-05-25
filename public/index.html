@@ -110,7 +110,7 @@
             <button onclick="showMore()">Показать ещё</button>
         </div>
         <div class="clear"><br></div>
-        <form name="test" method="post" action="input1.php">
+        <form name="test" method="post" >
             <br>
 
             <p><b>Логин:</b><br><br>
@@ -160,7 +160,7 @@
             <textarea id="content-text"></textarea>
             <h2>Введите тэги </h2>
             <textarea id="tags-text"></textarea>
-            <p><input type="file" name="photo" multiple accept="image/*,image/jpeg" id="img-add">
+            <p><input type="file" name="photo"  multiple accept="image/*,image/jpeg" id="img-add">
                 <input type="button" value="Добавить" onclick="saveAdd()" class="add-button">
                 <input type="button" value="Сохранить" onclick="saveEdit(this.parentNode.parentNode)"
                        class="save-button">

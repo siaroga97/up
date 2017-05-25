@@ -1,8 +1,6 @@
 const requestServer = (function () {
     function getArticles(skip, top, filterConfig) {
-
         return new Promise((resolve, reject) => {
-
             const request = new XMLHttpRequest();
             request.open('PUT', '/articles');
             request.setRequestHeader('content-type', 'application/json');
@@ -17,28 +15,12 @@ const requestServer = (function () {
             request.onerror = function () {
                 reject(new Error('Error'));
             };
-            request.send(JSON.stringify({skip, top, filterConfig}));
-        });
-    }
-
-    function getSize() {
-        return new Promise((resolve, reject) => {
-            const request = new XMLHttpRequest();
-            request.open('GET', '/articles');
-            request.onload = function () {
-                if (request.status === 200) {
-                    resolve(request.responseText);
-                }
-            };
-            request.onerror = function () {
-                reject(new Error('Error'));
-            };
-            request.send();
+            request.send(JSON.stringify({ skip, top, filterConfig }));
         });
     }
 
     function getArticle(id) {
-        return new Promise((resolve, rejecrt) => {
+        return new Promise((resolve, reject) => {
             const request = new XMLHttpRequest();
             request.open('GET', '/articles/' + id);
             request.onload = () => {
@@ -158,7 +140,6 @@ const requestServer = (function () {
 
     return {
         getArticles,
-        getSize,
         getArticle,
         getUserName,
         logOut,

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const db = mongoose.createConnection('mongodb://localhost/sergey');
 
+const db = mongoose.createConnection('mongodb://localhost/sergey');
 db.on('error', err => console.log('connection error to DB.', err.message));
 db.once('open', callback => console.log('connected to DB'));
 
@@ -11,12 +11,12 @@ const articles = new mongoose.Schema({
     summary: String,
     img: String,
     createdAt: Date,
-    tags: [String]
+    tags: [String],
 });
 
 const users = new mongoose.Schema({
     username: String,
-    password: String
+    password: String,
 });
 
 module.exports.articles = db.model('articles', articles);

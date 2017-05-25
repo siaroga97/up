@@ -12,7 +12,7 @@ const articleModel = (function () {
     }
 
     return {
-        validateArticle
+        validateArticle,
     };
 }());
 let currentUser;

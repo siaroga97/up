@@ -1,15 +1,6 @@
 const slideShow = (function () {
     let slideIndex = 1;
     let slideId = [];
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
     function fillSlideShow() {
         const divText = document.getElementsByClassName('text');
         const divSlid = document.getElementsByClassName('imgSlide');
@@ -41,12 +32,16 @@ const slideShow = (function () {
         for (i = 0; i < dots.length; i += 1) {
             dots[i].className = dots[i].className.replace('active', '');
         }
-        console.log(slideId);
-
         slides[slideIndex - 1].style.display = 'block';
         dots[slideIndex - 1].className += ' active';
     }
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
 
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
     return {
         plusSlides,
         currentSlide,
