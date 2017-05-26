@@ -18,7 +18,7 @@ let articles = require('./db.js').articles;
 
 /*
  let db = require('diskdb');
- db.connect('./db', ['articles']);
+ db.connect('./db', ['articles'],['allUsers']);
  let arts = db.articles.find();
  arts.forEach(item => {
  delete item.id;
@@ -26,13 +26,13 @@ let articles = require('./db.js').articles;
  new articles(item).save();
  });
 
- let db = require('diskdb');
+ 
  db.connect('./db', ['allUsers']);
- let arts = db.allUsers.find();
+ arts = db.allUsers.find();
  arts.forEach(item => {
  new users(item).save();
- });
- */
+ });*/
+ 
 
 function createFilter(filterConfig) {
     const filter = {};
