@@ -57,7 +57,6 @@ function returnMainPage() {
         singIn.innerHTML = 'войти';
         singIn.style.display = 'block';
     }
-    startApp();
 }
 let countNews = 5;
 function showMore() {
