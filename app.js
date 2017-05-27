@@ -16,23 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 let users = require('./db.js').users;
 let articles = require('./db.js').articles;
 
-/*
- let db = require('diskdb');
- db.connect('./db', ['articles'],['allUsers']);
- let arts = db.articles.find();
- arts.forEach(item => {
- delete item.id;
- delete item._id;
- new articles(item).save();
- });
-
- 
- db.connect('./db', ['allUsers']);
- arts = db.allUsers.find();
- arts.forEach(item => {
- new users(item).save();
- });*/
- 
 
 function createFilter(filterConfig) {
     const filter = {};
@@ -73,6 +56,8 @@ passport.use('login', new LocalStrategy({
             return done(null, user);
         });
     }));
+
+
 app.post('/login', passport.authenticate('login'), (req, res) => res.sendStatus(200));
 app.get('/logout', (req, res) => {
     req.logout();
