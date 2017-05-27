@@ -14,7 +14,7 @@ function saveAdd() {
         summary: document.querySelector('#summury-text').value,
         createdAt: new Date(),
         author: currentUser,
-        img: document.querySelector('#img-add').value,
+        img: 'image/HD-Dodge-Backgrounds.jpg',
         content: document.querySelector('#content-text').value,
         tags: document.querySelector('#tags-text').value.split(','),
     };
